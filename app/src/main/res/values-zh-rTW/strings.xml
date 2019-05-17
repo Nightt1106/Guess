@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guess</string>
+    <string name="bigger">大一點</string>
+    <string name="dialog_message">提示訊息</string>
+    <string name="ok">確認</string>
+    <string name="smaller">小一點</string>
+    <string name="tittle">請輸入一個數字</string>
+    <string name="you_got_it">猜對了!</string>
+</resources>
