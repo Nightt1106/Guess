@@ -20,9 +20,19 @@ class MaterialActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            AlertDialog.Builder(this)
+                .setTitle("Replay Game")
+                .setMessage("Are you sure")
+                .setPositiveButton(R.string.ok,{ dialog , which ->
+                    secretNumber.reset()
+                    counter.setText(secretNumber.count.toString())
+                    number.setText(" ")
+                })
+                .setNeutralButton("Cancel",null)
+                .show()
         }
+
+        counter.setText(secretNumber.count.toString())
     }
 
     fun check(view: View){
@@ -36,6 +46,7 @@ class MaterialActivity : AppCompatActivity() {
         } else if(diff > 0){
             message = getString(R.string.smaller)
         }
+        counter.setText(secretNumber.count.toString())
 //        Toast.makeText(this , message , Toast.LENGTH_LONG).show()
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.dialog_message))
